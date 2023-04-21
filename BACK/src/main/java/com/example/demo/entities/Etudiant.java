@@ -16,11 +16,7 @@ public class Etudiant extends Personne{
 
 	
 	private String matricule;
-	@ManyToOne(fetch = FetchType.LAZY, optional = false)
-	  @JoinColumn(name = "role_id", nullable = false)
-	  @OnDelete(action = OnDeleteAction.CASCADE)
-	  @JsonIgnore
-	  private Role role;
+	
 	
 	@ManyToOne(fetch = FetchType.LAZY, optional = false)
 	  @JoinColumn(name = "filiere_id", nullable = false)
@@ -32,10 +28,11 @@ public class Etudiant extends Personne{
 	private Collection<PasserExam> passerExams;
 	
 	
-	  	public Etudiant(Long id, String nom, String prenom, String tel, String email, String cin, String password,String matricule) {
-		super(id, nom, prenom, tel, email, cin, password);
-		this.matricule=matricule;
-	  		}
+	  	
+
+		public Etudiant() {
+		super();
+	}
 
 		public String getMatricule() {
 			return matricule;
@@ -45,13 +42,7 @@ public class Etudiant extends Personne{
 			this.matricule = matricule;
 		}
 
-		public Role getRole() {
-			return role;
-		}
-
-		public void setRole(Role role) {
-			this.role = role;
-		}
+		
 
 		public Filiere getFiliere() {
 			return filiere;

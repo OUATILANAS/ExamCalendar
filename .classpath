@@ -45,10 +45,13 @@
 			<attribute name="test" value="true"/>
 		</attributes>
 	</classpathentry>
+<<<<<<< HEAD
 	<classpathentry kind="src" path=".apt_generated">
 		<attributes>
 			<attribute name="optional" value="true"/>
 		</attributes>
 	</classpathentry>
+=======
+>>>>>>> 5fc4c5e681980c3f9a4d16e19c596cb5318276b4
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

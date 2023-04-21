@@ -18,7 +18,7 @@ import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
 
 @Entity
-public class Module {
+public class ModuleEntity {
 	
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -40,7 +40,7 @@ public class Module {
 	  private Semester semester;
   	
   	@ManyToMany(mappedBy = "modules", fetch= FetchType.EAGER)
-  	private Collection<Enseigant> enseignants = new ArrayList<>();
+  	private Collection<Enseignant> enseignants = new ArrayList<>();
 
 	public Long getId() {
 		return id;

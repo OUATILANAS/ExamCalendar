@@ -5,16 +5,16 @@ package com.example.demo.entities;
 
 import jakarta.persistence.*;
 
-
 @Entity
-public class Responsable extends Personne{
+public class Surveillant extends Personne{
 	
 
 
 	private String matricule;
 	
+	  
 
-		public Responsable() {
+		public Surveillant() {
 		super();
 	}
 

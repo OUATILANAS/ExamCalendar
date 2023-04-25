@@ -1,11 +1,22 @@
 package com.example.demo.entities;
 
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.MappedSuperclass;
+import jakarta.persistence.Inheritance;
+import jakarta.persistence.InheritanceType;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 
-@MappedSuperclass
+@Entity
+@Inheritance(strategy = InheritanceType.JOINED)
 public class Personne {
 	
 	@Id
@@ -19,26 +30,25 @@ public class Personne {
 	protected String password;
 	
 	
-	public Personne(Long id, String nom, String prenom, String tel, String email, String cin, String password) {
+	
+	
+	public Personne() {
 		super();
-		this.id = id;
-		this.nom = nom;
-		this.prenom = prenom;
-		this.tel = tel;
-		this.email = email;
-		this.cin = cin;
-		this.password = password;
 	}
-	
-	
-	public Personne(String nom, String prenom, String tel, String email, String cin, String password) {
-		super();
-		this.nom = nom;
-		this.prenom = prenom;
-		this.tel = tel;
-		this.email = email;
-		this.cin = cin;
-		this.password = password;
+	@ManyToOne(fetch = FetchType.LAZY, optional = false)
+	  @JoinColumn(name = "role_id", nullable = false)
+	  @OnDelete(action = OnDeleteAction.CASCADE)
+	  @JsonIgnore
+	  private Role role;
+
+
+	public Role getRole() {
+		return role;
+	}
+
+
+	public void setRole(Role role) {
+		this.role = role;
 	}
 
 

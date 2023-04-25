@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
+<<<<<<< HEAD
+	<name>BACK</name>
+=======
 	<name>ExamCalendar</name>
+>>>>>>> 5fc4c5e681980c3f9a4d16e19c596cb5318276b4
 	<comment></comment>
 	<projects>
 	</projects>

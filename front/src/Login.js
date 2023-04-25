@@ -2,8 +2,6 @@ import logo from './logo.svg';
 import image1 from './img2.jpg';
 import React, { useState } from 'react';
 import './css/style.css';
-import 'popper.js';
-import './js/popper';
 import { FiEye, FiEyeOff } from 'react-icons/fi';
 
 function Login() {
